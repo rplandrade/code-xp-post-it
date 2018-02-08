@@ -1,6 +1,6 @@
 var notes =  new Array();
 
-function addNote(newNote, title, text, section){
+const addNote = (newNote, title, text, section) =>{
     var note = new Object();
     note.id = '';
     note.title = title.value;
@@ -8,14 +8,13 @@ function addNote(newNote, title, text, section){
     note.edit = false;
     
     notes.push(note);
-    console.log(notes);
     printNotes(section);
     newNote.reset();
-}
+};
 function printNotes(section){
-    var note = "";
+    let note = "";
 
-    for (i = 0; i < notes.length; i ++){
+    for (let i = 0; i < notes.length; i ++){
         if (notes[i].edit == true){
             note += '<form class="note">';
             note +=    '<input class="note__title" type="text" name="title" value="'+notes[i].title+'" autofocus />';
